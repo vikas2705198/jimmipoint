@@ -581,8 +581,14 @@ async function getBalance(accountAddress, tokenID) {
    
   try {
     const balance = await erc1155Contract.methods.balanceOf(accountAddress, tokenID).call();
-    var result=`Balance of Token ID ${tokenID} for address ${accountAddress}: ${balance}`;
-	console.log(`Balance of Token ID ${tokenID} for address ${accountAddress}: ${balance}`);
+    
+	var result = {
+		"tokenID": tokenID,
+		"accountAddress": accountAddress,
+		"balance":balance
+	};
+	//var result=`Balance of Token ID ${tokenID} for address ${accountAddress}: ${balance}`;
+	//console.log(`Balance of Token ID ${tokenID} for address ${accountAddress}: ${balance}`);
  return result;
 } catch (error) {
     console.error('Error getting balance:', error);
