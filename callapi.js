@@ -4,6 +4,8 @@ const Web3 = require('web3');
 const infuraUrl = 'https://goerli.infura.io/v3/3f4b6e8c50194f218e43c6f53fa706e4';
 const privateKey = '7e1906e919b90b5c2fbd49f5e968d0853ae56c70257da5569cb780950a6de7da';
 const contractAddress = '0xe70D8c6adF252685aaf789cCeEE2f51011157FbE';
+//const contractAddress = '0x39879F88Ef0a9a561e5d8a757cEB8EeA486E508A';
+
 
 const web3 = new Web3(new Web3.providers.HttpProvider(infuraUrl));
 
