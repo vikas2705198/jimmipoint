@@ -604,7 +604,15 @@ async function transferToken(fromAddress, toAddress, tokenID, amount) {
       amount,
       '0x'
     ).send({gas: '1000000', from: fromAddress });
-    console.log('Transfer transaction result:', result);
+    //console.log('Transfer transaction result:', result);
+	var res = {
+		"fromAddress":fromAddress,
+		"toAddress":toAddress,
+		"tokenID": tokenID,
+		"amount": amount,
+		"msg":"Transfer Successfully"
+	}
+	return res;
   } catch (error) {
     console.error('Error transferring token:', error);
   }
@@ -619,7 +627,16 @@ async function mintToken(fromAddress, tokenID, amount) {
         amount,
         '0x'
       ).send({ gas: '1000000',from: fromAddress });
-      console.log('Mint transaction result:', result);
+     // console.log('Mint transaction result:', result);
+
+	 var res = {
+		"address":fromAddress,
+		"tokenID": tokenID,
+		"amount": amount,
+		"msg":"Mint Successfully"
+		
+	};
+	return res;
     } catch (error) {
       console.error('Error transferring token:', error);
     }

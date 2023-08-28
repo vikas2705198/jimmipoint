@@ -14,7 +14,7 @@ app.post('/api/mintToken', async (req, res) => {
    var resp = await callapi.mintToken(req.body.fromAddress, req.body.tokenID, req.body.amount)
 
   // Respond with a success message
-  res.json({ message: 'Token Mint Successfully ' });
+  res.json({ resp });
 });
 
 app.post('/api/getBalance', async (req, res) => {
@@ -32,7 +32,7 @@ app.post('/api/getBalance', async (req, res) => {
      var resp = await callapi.transferToken(req.body.fromAddress,req.body.toAddress, req.body.tokenID,req.body.amount)
   console.log("resp---------",resp);
     // Respond with a success message
-    res.json({ message: 'Token tranfer Successfully ' });
+    res.json({ resp });
   });
 
   app.post('/api/buyToken', async (req, res) => {
