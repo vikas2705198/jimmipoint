@@ -1,7 +1,7 @@
 const express = require('express');
 const bodyParser = require('body-parser'); // For parsing JSON request bodies
 var callapi = require('./callapi.js');
-var CouchDBCommon = require('./CouchDBCommon.js');
+
 var crypto = require('crypto');
 const app = express();
 const port = 5000; // You can choose any available port
@@ -37,7 +37,7 @@ app.post('/api/getBalance', async (req, res) => {
     res.json({ resp });
   });
 
-  app.post('/api/buyToken', async (req, res) => {
+ /* app.post('/api/buyToken', async (req, res) => {
     const requestData = req.body; // JSON data from the request body
     console.log('Received data:', requestData);
       await callapi.transferToken('0xF42BEb728B2a5A5a7277152A541D39B26b8110ca',req.body.toAddress, req.body.tokenID,req.body.amount)
@@ -74,7 +74,7 @@ app.post('/api/getBalance', async (req, res) => {
      
     // Respond with a success message
     res.json({ result });
-  });
+  });*/
 // Start the server
 app.listen(port, () => {
   console.log(`Server listening on port ${port}`);

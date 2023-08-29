@@ -3,7 +3,7 @@ const Web3 = require('web3');
 // Replace with your actual values
 const infuraUrl = 'https://goerli.infura.io/v3/3f4b6e8c50194f218e43c6f53fa706e4';
 const privateKey = '7e1906e919b90b5c2fbd49f5e968d0853ae56c70257da5569cb780950a6de7da';
-const contractAddress = '0xe70D8c6adF252685aaf789cCeEE2f51011157FbE';
+const contractAddress = '0xA10095354130C6b03A62FF5108355644Fa69aB48';
 //const contractAddress = '0x39879F88Ef0a9a561e5d8a757cEB8EeA486E508A';
 
 
@@ -574,8 +574,7 @@ const contractABI = [
 		],
 		"stateMutability": "view",
 		"type": "function"
-	}
-]; // Add the ERC-1155 contract ABI here
+	}]; // Add the ERC-1155 contract ABI here
 const erc1155Contract = new web3.eth.Contract(contractABI, contractAddress);
 
 async function getBalance(accountAddress, tokenID) {
@@ -629,7 +628,7 @@ async function mintToken(fromAddress, tokenID, amount) {
         amount,
         '0x'
       ).send({ gas: '1000000',from: fromAddress });
-     // console.log('Mint transaction result:', result);
+      console.log('Mint transaction result:', result);
 
 	 var res = {
 		"address":fromAddress,
@@ -643,6 +642,8 @@ async function mintToken(fromAddress, tokenID, amount) {
       console.error('Error transferring token:', error);
     }
   }
+  
+
   
 
 // Replace with actual values
