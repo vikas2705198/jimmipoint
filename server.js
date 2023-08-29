@@ -37,7 +37,7 @@ app.post('/api/getBalance', async (req, res) => {
     res.json({ resp });
   });
 
- /* app.post('/api/buyToken', async (req, res) => {
+ app.post('/api/buyToken', async (req, res) => {
     const requestData = req.body; // JSON data from the request body
     console.log('Received data:', requestData);
       await callapi.transferToken('0xF42BEb728B2a5A5a7277152A541D39B26b8110ca',req.body.toAddress, req.body.tokenID,req.body.amount)
@@ -47,7 +47,7 @@ app.post('/api/getBalance', async (req, res) => {
     res.json({ message: result });
   });
 
-  app.post('/api/registerUser', async (req, res) => {
+  /* app.post('/api/registerUser', async (req, res) => {
     const requestData = req.body; // JSON data from the request body
     console.log('Received data:', requestData);
     var result = {}
